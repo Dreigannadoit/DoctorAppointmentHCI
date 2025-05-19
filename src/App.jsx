@@ -19,7 +19,7 @@ import PatientBookDoctor from "./pages/app/patient/PatientBookDoctor"
 
 const App = () => {
   return (
-    <Router basename="/DoctorAppointmentHCI/">
+    <Router>
       <Routes>
         {/* Website */}
         <Route path="/" element={<Hero />} />

@@ -3,15 +3,15 @@
     width: 100%;
     display: flex;
     padding: 25px 25px 0px;
-    min-height: 100vh; 
+    min-height: 100vh;
 }
 
 .navbar-container {
     position: sticky;
     top: 25px;
-    align-self: flex-start; 
-    height: calc(100vh - 50px); 
-    margin-right: 25px; 
+    align-self: flex-start;
+    height: calc(100vh - 50px);
+    margin-right: 25px;
 }
 
 /* NAV BAR - DONT TOUCH THIS, THIS IS GOOD NA! */
@@ -30,40 +30,44 @@
     flex-direction: column;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.software_navbar:hover{
+
+.software_navbar:hover {
     width: 130px;
 }
 
-.software_navbar>img:last-child{
+.software_navbar>img:last-child {
     width: 100%;
     aspect-ratio: 1/1;
     object-fit: cover;
     border-radius: 35px;
 }
 
-.software_navbar ul{
+.software_navbar ul {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 15px;
-    
+
     text-align: center;
     list-style: none;
     font-size: 12px;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.software_navbar:hover ul{
+
+.software_navbar:hover ul {
     width: 110px;
     font-size: 18px;
 }
-.software_navbar ul li a{
+
+.software_navbar ul li a {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-.software_navbar ul li img{
+
+.software_navbar ul li img {
     width: 30px;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -77,7 +81,7 @@
     padding: 25px;
 }
 
-.TopBar{
+.TopBar {
     position: relative;
     width: 100%;
     height: 30px;
@@ -88,215 +92,76 @@
 
 .TopBar .notification,
 .TopBar .notification button,
-.TopBar .notification button img{
+.TopBar .notification button img {
     height: 100%;
     object-fit: cover;
 }
 
 
-.TopBar .notification button{
+.TopBar .notification button {
     background: transparent;
     border: none;
 }
 
-
-
-
-
-:root {
-  --calendar-available-bg: #e6fffa;   
-  --calendar-available-border: #2dd4bf;
-  --calendar-available-text: #0d9488;
-  --calendar-unavailable-bg: #fee2e2;
-  --calendar-unavailable-pattern: repeating-linear-gradient(
-    45deg,
-    rgba(0, 0, 0, 0.05),
-    rgba(0, 0, 0, 0.05) 5px,
-    transparent 5px,
-    transparent 10px
-  );
-  --calendar-lunch-bg: #f3f4f6;
-  --calendar-border-color: #e5e7eb;
-  --calendar-header-bg: #f9fafb;
-  --calendar-today-bg: #e0f2fe;
-  --calendar-text-color: #374151;
-  --calendar-dim-text-color: #6b7280;
+.AppointmentDetails_pop_up_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 1000;
 }
 
-.calendar_container .fc .fc-toolbar {
-  margin-bottom: 1.5em !important;
-  padding: 10px;
-  border-bottom: 1px solid var(--calendar-border-color);
-  background-color: var(--calendar-header-bg);
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+.AppointmentDetails_pop_up_overlay .pop_up {
+    width: 50%;
+    height: 100%;
+    padding: 35px;
+    border-bottom-left-radius: 35px;
+    border-top-left-radius: 35px;
+    background: var(--white-color);
+    overflow-y: scroll;
 }
 
-.calendar_container .fc .fc-toolbar-title {
-  font-size: 1.5em !important;
-  font-weight: 600;
-  color: var(--calendar-text-color);
+.AppointmentDetails_pop_up_overlay .pop_up img {
+    height: 40px;
 }
 
-.calendar_container .fc .fc-button {
-  background-color: #fff;
-  border: 1px solid var(--calendar-border-color) !important;
-  color: var(--calendar-dim-text-color) !important;
-  text-transform: capitalize;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  transition: all 0.2s ease-in-out;
-  padding: 0.5em 1em !important;
-  border-radius: 6px !important;
-  
-  margin: 0 10px;
-}
-.calendar_container .fc .fc-button:not(:disabled):hover {
-  background-color: #f9fafb !important;
-  border-color: #d1d5db !important;
-  color: var(--calendar-text-color) !important;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+.AppointmentDetails_pop_up_overlay .pop_up .AppointmentDetails_pop_up_overlay_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 15px;
+    width: 100%;
 }
 
-.calendar_container .fc .fc-button-primary {
-  background-color: var(--dark-pink-color) !important;
-  border-color: var(--dark-pink-color) !important;
-  color: white !important;
-}
-.calendar_container .fc .fc-button-primary:not(:disabled):hover {
-  background-color: var(--light-pink-color) !important;
-  border-color: var(--light-pink-color) !important;
-  color: var(--dark-color);
-}
-.calendar_container .fc .fc-button-primary:disabled {
-  background-color: #a5d8ff !important; 
-  border-color: #a5d8ff !important;
+.AppointmentDetails_pop_up_overlay .pop_up span {
+    background: var(--background-color);
+    padding: 5px 15px;
+    border-radius: 35px;
 }
 
-
-.calendar_container .fc .fc-view-harness {
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-  overflow: hidden; 
+.AppointmentDetails_pop_up_overlay .pop_up p {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-.calendar_container .fc th { 
-  background-color: var(--calendar-header-bg);
-  border-color: var(--calendar-border-color) !important;
-  color: var(--calendar-dim-text-color);
-  font-weight: 500;
-  padding: 0.75em 0.5em !important;
+.AppointmentDetails_pop_up_overlay .pop_up .button_container {
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
 }
 
-.calendar_container .fc .fc-daygrid-day-number {
-  color: var(--calendar-dim-text-color);
-  padding: 0.5em !important;
-}
-.calendar_container .fc .fc-day-today {
-  background-color: var(--calendar-today-bg) !important;
-}
-.calendar_container .fc .fc-day-today .fc-daygrid-day-number {
-  font-weight: bold;
-  color: var(--dark-pink-color);
-}
-
-.calendar_container .fc .fc-timegrid-slot-label { 
-  color: var(--calendar-dim-text-color);
-  border-color: var(--calendar-border-color) !important;
-}
-.calendar_container .fc .fc-timegrid-slot {
-  border-color: var(--calendar-border-color) !important;
-}
-.calendar_container .fc .fc-timegrid-col.fc-day-today {
-   background-color: var(--calendar-today-bg) !important;
-}
-
-.calendar_container .fc .fc-event {
-  border-radius: 4px;
-  padding: 4px 6px;
-  font-size: 0.85em;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
-  transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
-}
-.calendar_container .fc .fc-event:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
-}
-
-.calendar_container .fc-event.event-unavailable-bg {
-  background-color: var(--calendar-unavailable-bg) !important; 
-  background-image: var(--calendar-unavailable-pattern) !important;
-  border: none !important;
-  color: #ef4444 !important; 
-  opacity: 0.7; 
-}
-.calendar_container .fc-event.event-lunch-bg {
-  background-color: var(--calendar-lunch-bg) !important;
-  background-image: repeating-linear-gradient(
-    45deg,
-    transparent,
-    transparent 4px,
-    rgba(0, 0, 0, 0.02) 4px,
-    rgba(0, 0, 0, 0.02) 8px
-  ) !important;
-  border: none !important;
-  opacity: 0.8;
-}
-
-.calendar_container .fc-event.event-available {
-  background-color: var(--dark-green-color) !important;
-  border: 1px solid var(--calendar-available-border) !important;
-  color: var(--calendar-available-text) !important;
-  cursor: pointer;
-}
-.calendar_container .fc-event.event-available .fc-event-title {
-  font-weight: 500;
-}
-.calendar_container .fc-event.event-available:hover {
-  background-color: var(--dark-green-color) !important; 
-  border-color: #14b8a6 !important;
-}
-
-.calendar_container .fc-event.event-user-booking {
-  background-color: var(--dark-pink-color) !important;
-  border: 1px solid var(--dark-pink-color) !important;
-  color: white !important;
-}
-.calendar_container .fc-event.event-user-booking .fc-event-title {
-  font-weight: bold;
-}
-
-
-.calendar_container .fc .fc-timegrid-now-indicator-line {
-  border-color: #fb923c !important;
-  border-width: 2px !important;
-}
-.calendar_container .fc .fc-timegrid-now-indicator-arrow {
-  border-color: #fb923c !important;
-}
-
-.calendar_container .fc .fc-highlight { 
-  background: rgba(0, 123, 255, 0.15) !important; 
-}
-
-.calendar_container .fc-scroller::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-.calendar_container .fc-scroller::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 10px;
-}
-.calendar_container .fc-scroller::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
-  border-radius: 10px;
-}
-.calendar_container .fc-scroller::-webkit-scrollbar-thumb:hover {
-  background: #a1a1a1;
-}
-
-.calendar_container {
-  padding: 1px; 
-  background-color: #fff; 
-  border-radius: 8px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+.AppointmentDetails_pop_up_overlay .pop_up .button_container button {
+    padding: 15px 35px;
+    border: none;
+    background-color: var(--dark-green-color);
+    color: var(--background-color);
+    border-radius: 35px;
 }
