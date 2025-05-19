@@ -3,6 +3,7 @@ import NavBar from './NavBar'
 import Footer from '../Footer'
 
 import "../../styles/SoftwareUniversale.css"
+import ChatBot from './ChatBot';
 
 const PatientWrapper = ({ children }) => {
   return (
@@ -12,10 +13,11 @@ const PatientWrapper = ({ children }) => {
           <NavBar />
         </div>
         <div className='PatientWrapper'>{children}</div>
+        <ChatBot /> 
       </div>
       <Footer addClassCondition={"sotware"}/>
     </>
-  )
-}
+  );
+};
 
-export default PatientWrapper
+export default PatientWrapper;
