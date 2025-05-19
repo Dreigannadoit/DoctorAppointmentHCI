@@ -1,9 +1,94 @@
-.PatientWrapper {
+.patient_window:has(.greeting_block) .s_1{
     width: 100%;
-    padding: 25px 25px 0px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
 }
 
-.patient_window{
-    min-height: 90vh;
+.basic_info{
+    width: 70%;
+}
+
+.greeting_block{
+    height: 300px;
+    width: 100%;
+    background: linear-gradient(135deg, var(--light-pink-color) 0%, var(--dark-pink-color) 100%);
+    border-radius: 25px;
+}
+
+.greeting_block .greeting_block_content {
+    position: relative;
+    height: 100%;
+    width: 100%;
     padding: 25px;
+    background-image: radial-gradient(circle, var(--background-color) 1px, transparent 1px);
+    background-size: 20px 20px;
+    overflow: hidden;
+}
+
+.greeting_block .greeting_block_content .banenr{
+    position: absolute;
+    right: -10%;
+    bottom: 5%;
+    height: 100%;
+    z-index: 1;
+}
+
+.greeting_block .greeting_block_content .banenr img{
+    height: 110%;
+    object-fit: contain;
+    z-index: 1;
+}
+
+.greeting_block .greeting_block_content .text{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    z-index: 9999;
+    padding: 25px;
+}
+
+.greeting_block .greeting_block_content .text .open_status p {
+  padding: 5px 15px;
+    z-index: 9999;
+}
+
+.patient_window .countdown{
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 35px;
+    background-color: var(--background-color);
+    padding: 5px 0px;
+}
+
+.patient_window .doctor_info_block{
+    background-color: var(--light-green-color);
+    width: 30%;
+    border-radius: 25px;
+    background-image: radial-gradient(circle, var(--background-color) 1px, transparent 1px);
+    background-size: 20px 20px;
+    padding: 25px;
+    text-align: center;
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.patient_window .doctor_info_block>p:first-child{
+    background-color: var(--background-color);
+    border-radius: 35px;
+}
+.patient_window .doctor_info_block img{
+    height: 150px;
+    margin: 10px 0;
+    object-fit: contain;
 }

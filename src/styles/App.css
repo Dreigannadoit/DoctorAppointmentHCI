@@ -62,10 +62,12 @@ section {
 
 .open_status.open p {
   color: var(--white-color);
+  background-color: var(--light-green-color);
   border: 2px var(--light-green-color) solid;
 }
 .open_status.closed p {
   color: var(--dark-pink-color);
+  background-color: var(--light-pink-color);
   border: 2px var(--light-pink-color) solid;
 }
 
@@ -141,6 +143,8 @@ section {
 
 
 /* Footer */
+/* Footer */
+/* Footer */
 
 .footer{
   height: 100px;
@@ -155,6 +159,10 @@ section {
   flex-direction: row;
 
   padding: 0 35px;
+}
+
+.footer.sotware{
+  margin-top: 25px;
 }
 
 .footer p{

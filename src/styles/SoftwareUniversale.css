@@ -1,0 +1,58 @@
+.PatientWrapper_wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    padding: 25px 25px 0px;
+    min-height: 100vh; 
+}
+
+.navbar-container {
+    position: sticky;
+    top: 25px;
+    align-self: flex-start; 
+    height: calc(100vh - 50px); 
+    margin-right: 25px; 
+}
+
+/* NAV BAR - DONT TOUCH THIS, THIS IS GOOD NA! */
+
+.software_navbar {
+    width: 100%;
+    height: 100%;
+    background: var(--white-color);
+    padding: 25px;
+    border-radius: 35px;
+    position: sticky;
+    top: 25px;
+}
+
+.PatientWrapper {
+    width: 92%;
+    flex-grow: 1;
+}
+
+.patient_window {
+    padding: 25px;
+}
+
+.TopBar{
+    position: relative;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.TopBar .notification,
+.TopBar .notification button,
+.TopBar .notification button img{
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.TopBar .notification button{
+    background: transparent;
+    border: none;
+}

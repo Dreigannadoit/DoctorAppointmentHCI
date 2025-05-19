@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import NavbarWeb from './NavbarWeb'
 import NavbarWebSticky from './NavbarWebSticky';
+import Footer from '../Footer';
 
 const WebWrapper = ({ children }) => {
   const [showSticky, setShowSticky] = useState(false);
@@ -29,6 +30,8 @@ const WebWrapper = ({ children }) => {
       <NavbarWeb />
 
       <div className='Web_wrapper'>{children}</div>
+
+      <Footer/>
     </>
   );
 };

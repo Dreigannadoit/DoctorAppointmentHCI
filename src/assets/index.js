@@ -1,5 +1,6 @@
 import logo from "./logo/LOGO.png"
 import logo_light from "./logo/LOGO_LIGHT.png"
+import logo_sidebar from "./logo/Logo_side_bar.svg"
 
 import cta from "./icons/cta.png"
 import cta_yellow from "./icons/cta_yellow.png"
@@ -13,6 +14,8 @@ import tooth4 from "./icons/tooth4.png"
 import tooth5 from "./icons/tooth5.png"
 import tooth6 from "./icons/tooth6.png"
 import tooth7 from "./icons/tooth7.png"
+
+import bell from "./icons/bell.png"
 
 import about_1 from "./icons/about_1.png"
 import about_2 from "./icons/about_2.png"
@@ -31,6 +34,8 @@ import hann from "./imgs/hann.jpg"
 
 import cta_hero from "./imgs/cta_hero.png"
 
+import Banner_Full from "./imgs/Banner_Full.svg"
+
 import login from "./imgs/login.png"
 import login_2 from "./imgs/login_2.jpg"
 import register from "./imgs/register.jpg"
@@ -39,6 +44,7 @@ export {
     logo,
     logo_light,
     cta,
+    Banner_Full,
     cta_yellow,
     google_icon,
     tooth1,
@@ -48,6 +54,7 @@ export {
     tooth5,
     tooth6,
     tooth7,
+    bell,
     about_1,
     about_2,
     about_3,
@@ -64,5 +71,6 @@ export {
     register,
     drei,
     abby,
-    hann
+    hann,
+    logo_sidebar
 }

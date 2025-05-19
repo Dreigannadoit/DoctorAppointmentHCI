@@ -1,41 +1,20 @@
 import React from 'react';
+import { getBusinessStatus } from '../../utils/getBusinessStatus';
 
 const OpenStatus = () => {
-  const now = new Date();
-  const currentDay = now.getDay(); 
-  const currentHour = now.getHours();
-  const currentMinutes = now.getMinutes();
-
-  const currentTimeInMinutes = currentHour * 60 + currentMinutes;
-
-  let isOpen = false;
-  let statusMessage = "WE ARE CLOSED";
-
-  if (currentDay >= 1 && currentDay <= 5) {
-    const openTime = 7 * 60;   
-    const closeTime = 21 * 60; 
-    isOpen = currentTimeInMinutes >= openTime && currentTimeInMinutes <= closeTime;
-  } 
-
-  else if (currentDay === 0 || currentDay === 6) {
-    const openTime = 10 * 60;  
-    const closeTime = 15 * 60;
-    isOpen = currentTimeInMinutes >= openTime && currentTimeInMinutes <= closeTime;
-  }
-
-  statusMessage = isOpen ? "WE ARE OPEN" : "WE ARE CLOSED";
+  const { isOpen, statusMessage, hoursDescription } = getBusinessStatus();
 
   return (
     <>
       <div className="working_hours">
         <h3>WORKING HOURS</h3>
         <div>
-          <p>MONDAY - FRIDAY</p>
-          <p>7 AM - 9 PM</p>
+          <p>{hoursDescription.weekdays.split(':')[0]}</p>
+          <p>{hoursDescription.weekdays.split(':')[1]}</p>
         </div>
         <div>
-          <p>SATURDAY, SUNDAY</p>
-          <p>10 AM - 3 PM</p>
+          <p>{hoursDescription.weekends.split(':')[0]}</p>
+          <p>{hoursDescription.weekends.split(':')[1]}</p>
         </div>
       </div>
 
