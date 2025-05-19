@@ -1,8 +1,8 @@
 import React from 'react'
-import { Calendar, Dashboard, Dental_Codes, Eligibility, logo_sidebar, Patients, profile, Reports } from '../../assets'
+import { Calendar, Dashboard, Dental_Codes, Eligibility, exit_icon, logo_sidebar, Patients, profile, Reports } from '../../assets'
 import { Link } from 'react-router-dom'
 
-const NavBar = () => {
+const NavBar = ({handleExitClick}) => {
   return (
     <div className='software_navbar'>
       <div className="logo">
@@ -27,6 +27,12 @@ const NavBar = () => {
             <img src={Patients} alt="" />
             <p>Doctors</p>
           </Link>
+        </li>
+        <li>
+          <button onClick={handleExitClick}>
+            <img src={exit_icon} alt="" />
+            <p>Exit</p>
+          </button>
         </li>
         {/* <li>
           <Link>

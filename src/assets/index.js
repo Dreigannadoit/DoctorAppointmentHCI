@@ -66,6 +66,9 @@ export { default as upload } from "./icons/upload.svg";
 export { default as User } from "./icons/User.svg";
 export { default as User_Add } from "./icons/User_Add.svg";
 export { default as Calendar } from "./icons/Calendar.svg";
+export { default as exit_icon } from "./icons/exit_icon.svg";
+
+
 
 export {
     logo,

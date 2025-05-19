@@ -59,7 +59,8 @@
     position: relative;
 }
 
-.software_navbar ul li a {
+.software_navbar ul li a,
+.software_navbar ul li button {
     position: relative;
     display: flex;
     flex-direction: row;
@@ -67,13 +68,19 @@
     justify-content: center;
     gap: 25px;
 }
+.software_navbar ul li button {
+    border: none;
+    background: transparent;
+}
 
-.software_navbar ul li a p {
+.software_navbar ul li a p,
+.software_navbar ul li button p {
     clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.software_navbar:hover ul li a p {
+.software_navbar:hover ul li a p,
+.software_navbar:hover ul li button p {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
@@ -94,9 +101,83 @@
     transform: translateX(30%);
 }
 
+.software_navbar ul li:nth-child(4) img {
+    transform: translateX(30%);
+}
 .software_navbar:hover ul li img {
     transform: translateX(0%);
 }
+
+/* Exit Confirmation Popup Styles */
+.exit-confirm-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9000;
+}
+
+.exit-confirm-popup {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 350px;
+  max-width: 90%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.exit-confirm-popup h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.exit-confirm-popup p {
+  margin-bottom: 1.5rem;
+  color: #666;
+}
+
+.exit-confirm-popup .button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.exit-confirm-popup button {
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.exit-confirm-popup .cancel-btn {
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+.exit-confirm-popup .cancel-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.exit-confirm-popup .confirm-btn {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.exit-confirm-popup .confirm-btn:hover {
+  background-color: #e60000;
+}
+
+
+
+
 
 .PatientWrapper {
     width: 92%;
@@ -123,11 +204,16 @@
     object-fit: cover;
 }
 
-
 .TopBar .notification button {
     background: transparent;
     border: none;
 }
+
+
+
+
+
+
 
 .AppointmentDetails_pop_up_overlay {
     position: fixed;
