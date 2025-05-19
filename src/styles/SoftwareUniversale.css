@@ -32,44 +32,65 @@
 }
 
 .software_navbar:hover {
-    width: 130px;
+    width: 190px;
 }
 
 .software_navbar>img:last-child {
-    width: 100%;
+    width: 50px;
     aspect-ratio: 1/1;
     object-fit: cover;
     border-radius: 35px;
 }
 
 .software_navbar ul {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 45px;
 
     text-align: center;
     list-style: none;
-    font-size: 12px;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.software_navbar:hover ul {
-    width: 110px;
-    font-size: 18px;
+.software_navbar ul li {
+    position: relative;
 }
 
 .software_navbar ul li a {
+    position: relative;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
+    gap: 25px;
+}
+
+.software_navbar ul li a p{
+    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.software_navbar:hover ul li a p{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
 .software_navbar ul li img {
     width: 30px;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.software_navbar ul li:nth-child(1) img {
+    transform: translateX(30%);
+}
+.software_navbar ul li:nth-child(2) img {
+    transform: translateX(30%);
+}
+.software_navbar ul li:nth-child(3) img {
+    transform: translateX(30%);
+}
+.software_navbar:hover ul li img{
+    transform: translateX(0%);
 }
 
 .PatientWrapper {

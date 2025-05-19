@@ -19,19 +19,20 @@ const NavBar = () => {
         <li>
           <Link to="/patient_calendar">
             <img src={Calendar} alt="" />
-            Schedule
+            <p>Schedule</p>
           </Link>
         </li>
         <li >
           <Link to="/patient_doctor">
             <img src={Patients} alt="" />
-            <p>Doctors</p></Link>
+            <p>Doctors</p>
+          </Link>
         </li>
-        <li>
+        {/* <li>
           <Link>
             <img src={Reports} alt="" />
             <p>Records</p></Link>
-        </li>
+        </li> */}
       </ul>
 
       <img src={profile} alt="" />
