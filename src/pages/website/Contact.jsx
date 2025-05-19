@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import WebWrapper from '../../components/website/WebWrapper'
 
 import "../../styles/Contact.css"
-import { abby, drei, hann } from '../../assets'
+import { abby, drei, hann, ken } from '../../assets'
 
 const Contact = () => {
     const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -26,7 +26,7 @@ const Contact = () => {
         {
             name: "KEN A. MADRIÑAN",
             title: "ANALYTICS",
-            img: hann
+            img: ken
         },
     ]
 

@@ -17,13 +17,23 @@
 /* NAV BAR - DONT TOUCH THIS, THIS IS GOOD NA! */
 
 .software_navbar {
-    width: 100%;
+    width: 70px;
     height: 100%;
     background: var(--white-color);
-    padding: 25px;
+    padding: 15px 10px;
     border-radius: 35px;
     position: sticky;
     top: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-direction: column;
+}
+.software_navbar>img:last-child{
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 35px;
 }
 
 .PatientWrapper {

@@ -1,5 +1,6 @@
 import React from 'react'
-import { logo_sidebar } from '../../assets'
+import { Calendar, Dashboard, Dental_Codes, Eligibility, logo_sidebar, Patients, profile } from '../../assets'
+import { Link } from 'react-router-dom'
 
 const NavBar = () => {
   return (
@@ -7,6 +8,30 @@ const NavBar = () => {
       <div className="logo">
         <img src={logo_sidebar} alt="" />
       </div>
+
+        <nav>
+          <ul>
+            <li>
+              <Link>
+                <img src={Dashboard} alt="" />
+                <p>Dashboard</p>
+              </Link>
+            </li>
+            <li>
+              <Link>
+                <img src={Patients} alt="" />
+                <p>Doctors</p></Link>
+            </li>
+            <li>
+              <Link>
+                <img src={Calendar} alt="" />
+                Schedule
+              </Link>
+            </li>
+          </ul>
+        </nav>
+
+        <img src={profile} alt="" />
     </div>
   )
 }

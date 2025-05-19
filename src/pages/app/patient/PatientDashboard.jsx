@@ -18,7 +18,10 @@ const PatientDashboard = () => {
         <div className="s_1">
           <GreetingBlock />
           <AppointmentInfo />
+        </div>
 
+        <div className="s2">
+          {/* add other information here */}
         </div>
       </section>
     </PatientWrapper>

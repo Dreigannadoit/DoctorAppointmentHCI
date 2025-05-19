@@ -42,10 +42,13 @@
     z-index: 0;
     transition: all 0.3s 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.members .wrapper_content .person:nth-child(3) img,
-.members .wrapper_content .person:nth-child(4) img{
+.members .wrapper_content .person:nth-child(3) img{
     height: 110%;
     transform: translate(-65%, -50%);
+}
+.members .wrapper_content .person:nth-child(4) img{
+    left: 0%;
+    transform: translate(-5%, -50%);
 }
 
 .members .wrapper_content:has(.person.active) .person.active  img{

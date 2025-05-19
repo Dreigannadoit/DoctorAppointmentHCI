@@ -28,9 +28,12 @@ import doctor_3 from "./imgs/doctor_3.png"
 import doctor_4 from "./imgs/doctor_4.png"
 import doctor_5 from "./imgs/doctor_5.png"
 
+import profile from "./imgs/profile.jpg"
+
 import drei from "./imgs/drei.jpg"
 import abby from "./imgs/abby.jpg"
 import hann from "./imgs/hann.jpg"
+import ken from "./imgs/ken.jpg"
 
 import cta_hero from "./imgs/cta_hero.png"
 
@@ -39,6 +42,25 @@ import Banner_Full from "./imgs/Banner_Full.svg"
 import login from "./imgs/login.png"
 import login_2 from "./imgs/login_2.jpg"
 import register from "./imgs/register.jpg"
+
+export { default as Chart } from "./icons/Chart.svg";
+export { default as Dashboard } from "./icons/Dashboard.svg";
+export { default as Dental_Codes } from "./icons/Dental_Codes.svg";
+export { default as Distribution } from "./icons/Distribution.svg";
+export { default as Eligibility } from "./icons/Eligibility.svg";
+export { default as eyeOpen } from "./icons/eye-open.svg";
+export { default as File_Edit } from "./icons/File_Edit.svg";
+export { default as Grade } from "./icons/Grade.svg";
+export { default as Import } from "./icons/Import.svg";
+export { default as Patients } from "./icons/Patients.svg";
+export { default as Procedure_Codes } from "./icons/Procedure_Codes.svg";
+export { default as Program } from "./icons/Program.svg";
+export { default as Reports } from "./icons/Reports.svg";
+export { default as School } from "./icons/School.svg";
+export { default as upload } from "./icons/upload.svg";
+export { default as User } from "./icons/User.svg";
+export { default as User_Add } from "./icons/User_Add.svg";
+export { default as Calendar } from "./icons/Calendar.svg";
 
 export {
     logo,
@@ -72,5 +94,7 @@ export {
     drei,
     abby,
     hann,
-    logo_sidebar
+    ken,
+    logo_sidebar,
+    profile
 }
