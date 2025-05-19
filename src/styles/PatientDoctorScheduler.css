@@ -1,0 +1,125 @@
+.PatientDoctorScheduler .controller {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.PatientDoctorScheduler .controller .category_sorter{
+  display: flex;
+  gap: 25px;
+}
+
+.PatientDoctorScheduler .controller .category_sorter button,
+.PatientDoctorScheduler .card button {
+  padding: 15px 35px;
+  border: none;
+  background-color: var(--background-color);
+  color: var(--dark-color);
+  border-radius: 35px;
+  transition: all 500ms ease;
+}
+.PatientDoctorScheduler .controller .category_sorter button.active,
+.PatientDoctorScheduler .card button{
+   background-color: var(--dark-green-color);
+  color: var(--background-color);
+}
+
+
+.PatientDoctorScheduler .controller .availability-filters {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 19px;
+}
+
+.PatientDoctorScheduler .controller .availability-filters .filter-group{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.PatientDoctorScheduler .card_container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 35px;
+}
+
+.PatientDoctorScheduler .card_container .card{
+    max-width: 250px;
+}
+
+.PatientDoctorScheduler .card_container .card img{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 35px;
+}
+
+.pop_up_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.pop_up_block {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 700px;
+    text-align: center;
+}
+
+.pop_up_block img {
+    width: 100px;
+    margin-bottom: 1rem;
+}
+
+.pop_up_block h2 {
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.pop_up_block input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.pop_up_block .button_container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.pop_up_block button {
+    padding: 15px 35px;
+    border: none;
+    border-radius: 35px;
+}
+
+.pop_up_block .button_container button:first-child {
+    background-color: var(--background-color);
+    color: var(--dark-color);
+}
+.pop_up_block .button_container button:last-child {
+    background-color: var(--light-green-color);
+    color: var(--dark-color);
+}
+
+.pop_up_block .quick_responses>div{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}

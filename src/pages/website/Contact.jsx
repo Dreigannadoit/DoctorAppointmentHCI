@@ -25,7 +25,7 @@ const Contact = () => {
         },
         {
             name: "KEN A. MADRIÑAN",
-            title: "ANALYTICS",
+            title: "DESIGNER",
             img: ken
         },
     ]

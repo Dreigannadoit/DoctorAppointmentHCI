@@ -1,4 +1,4 @@
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom"
+import { Route, HashRouter as Router, Routes } from "react-router-dom"
 
 import './styles/App.css'
 
@@ -12,6 +12,10 @@ import Footer from "./components/Footer"
 import PatientDashboard from "./pages/app/patient/PatientDashboard"
 import DentalPrices from "./pages/website/DentalPrices"
 import Contact from "./pages/website/Contact"
+import PatientCalendar from "./pages/app/patient/PatientCalendar"
+import PatientWrapper from "./components/app/PatientWrapper"
+import PatientDoctorScheduler from "./pages/app/patient/PatientDoctorSceduler"
+import PatientBookDoctor from "./pages/app/patient/PatientBookDoctor"
 
 const App = () => {
   return (
@@ -28,6 +32,9 @@ const App = () => {
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/doctor" element={<DoctorDashboard />} />
         <Route path="/patient_dashboard" element={<PatientDashboard />} />
+        <Route path="/patient_doctor" element={<PatientDoctorScheduler />} />
+        <Route path="/patient_book_doctor" element={<PatientBookDoctor />} />
+        <Route path="/patient_calendar" element={<PatientCalendar />} />
       </Routes>
     </Router>
   )

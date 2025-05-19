@@ -1,0 +1,178 @@
+/* General calendar container styles */
+.scheduler_wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start; 
+}
+
+.scheduler {
+    width: calc(100% - 330px) !important; 
+    flex: 1;
+}
+
+
+.scheduler table {
+    background-color: transparent;
+    border-spacing: 2px;
+    border-collapse: separate;
+}
+
+.scheduler table table td {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.scheduler table table td.fc-day {
+    padding: 1px;
+}
+
+.fc * {
+    transition: all 100ms linear;
+}
+
+.fc {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.fc .fc-dayGridMonth-view .fc-day-today {
+    background: var(--pink-grad);
+    color: #fff;
+    font-weight: bold;
+}
+
+.fc .fc-timegrid-col.fc-day-today,
+.fc .fc-timegrid-col.fc-day-past,
+.fc .fc-timegrid-col.fc-day-future {
+    background-color: transparent;
+    border: solid var(--dark-color) 2px;
+}
+
+.fc-scroller-harness {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
+}
+
+.fc-col-header-cell-cushion {
+    font-size: 16px;
+}
+
+.fc-theme-standard td,
+.fc-theme-standard th {
+    border: none !important;
+    border-radius: 5px;
+}
+
+.fc-theme-standard .fc-scrollgrid {
+    border: none !important;
+}
+
+.tooltip {
+    position: absolute;
+    background: white;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    opacity: 0.9;
+}
+
+.calendar_controls_wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+
+.calendar_controls_wrapper .calendar_controls {
+    justify-content: space-between;
+    display: flex;
+    gap: 15px;
+}
+
+.calendar_controls_wrapper .calendar_controls div {
+    height: 100%;
+    display: flex;
+    gap: 15px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    transition: all 400ms ease-in-out;
+}
+
+.calendar_controls_wrapper .calendar_controls div h1 {
+    transition: all 400ms ease-in-out;
+}
+
+body:has(.side_nav.open) .calendar_controls_wrapper .calendar_controls div h1 {
+    font-size: 18px;
+}
+
+.calendar_controls_wrapper .calendar_controls div button {
+    padding: 15px;
+    border-radius: 15px;
+    height: 100%;
+    background: var(--background-color);
+    border: none;
+    cursor: pointer;
+    transition: all 400ms ease-in-out;
+}
+
+.calendar_controls_wrapper .calendar_controls div button.add_new {
+    background: var(--green-grad);
+    color: white;
+}
+
+.calendar_controls_wrapper .calendar_controls div button:hover {
+    background-color: var(--button-hover-bg, #e0e0e0);
+}
+
+.calendar_controls_wrapper .calendar_controls div button:has(img) {
+    padding: 15px;
+}
+
+.calendar_controls_wrapper .calendar_controls div button img {
+    height: 10px;
+}
+
+.scheduler_wrapper .side_info {
+    position: sticky;
+    top: 20px;
+    width: 310px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: calc(100vh - 40px);
+}
+
+.scheduler_wrapper .mini_calendar {
+    height: 350px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: var(--light-pink-color);
+    overflow-y: auto; 
+
+}
+
+.scheduler_wrapper .events_planed {
+    height: 320px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 5px 9px;
+    overflow-y: hidden; 
+
+}
+
+.scheduler_wrapper .events_planed ul{
+    height: 100%;
+}

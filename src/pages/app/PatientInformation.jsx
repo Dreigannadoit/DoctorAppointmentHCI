@@ -5,6 +5,7 @@ import { logo } from '../../assets';
 import { AnimatePresence } from 'framer-motion';
 import PatientConsentPopUp from '../../components/app/PatientConsentPopUp';
 import { useNavigate } from 'react-router-dom';
+import Footer from '../../components/Footer';
 
 const PatientInformation = () => {
   const [openSubmit, setOpenSubmit] = useState(false);
@@ -55,6 +56,8 @@ const PatientInformation = () => {
 
         </section>
       </div>
+
+      <Footer />
     </>
   )
 }

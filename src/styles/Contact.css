@@ -54,8 +54,13 @@
 .members .wrapper_content:has(.person.active) .person.active  img{
     height: 150%;
 }
-.members .wrapper_content:has(.person.active) .person:nth-child(3).active  img{
+.members .wrapper_content:has(.person.active) .person:nth-child(3).active img{
     height: 120%;
+}
+.members .wrapper_content:has(.person.active) .person:nth-child(4).active img{
+    height: 300%;
+    transform: translate(-16%, -50%);
+    transition: all 0.15s 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .members .wrapper_content .person .text{

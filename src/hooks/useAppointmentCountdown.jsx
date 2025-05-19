@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 
 const useAppointmentCountdown = (appointmentDateString) => {
   const [currentDateTime, setCurrentDateTime] = useState(new Date());
@@ -9,7 +9,7 @@ const useAppointmentCountdown = (appointmentDateString) => {
     seconds: 0
   });
 
-  const appointmentDate = new Date(appointmentDateString);
+  const appointmentDate = useMemo(() => new Date(appointmentDateString), [appointmentDateString]);
 
   // Update current time every second
   useEffect(() => {
@@ -38,10 +38,10 @@ const useAppointmentCountdown = (appointmentDateString) => {
     };
 
     const timer = setInterval(calculateTimeLeft, 1000);
-    calculateTimeLeft();
+    calculateTimeLeft(); // Initial call
 
     return () => clearInterval(timer);
-  }, [appointmentDate]);
+  }, [appointmentDate]); 
 
   // Formatted date and time
   const formattedDate = currentDateTime.toLocaleDateString("en-US", {

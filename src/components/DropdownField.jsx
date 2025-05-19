@@ -2,32 +2,37 @@ import React, { useState } from 'react'
 
 // NOTE: WHEN USING THIS COMPONENT, MAKE SURE THAT THE PARENT ELEMENT HAS A POSITION OF RELATIVE
 
-const DropdownField = ({ listItems, inputFieldText = "Select Item", label = "Item" }) => {
+const DropdownField = ({ listItems, inputFieldText = "Select Item", label = "Item", showValue = false, onSelectionChange = () => {}, retunValue = false  }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedItem, setSelectedItem] = useState([])
 
     const toggleDropdown = () => setIsOpen(!isOpen);
 
-    const handleSelectItem = (allergy) => {
-        if (allergy.value === 'none') {
+    const handleSelectItem = (item) => {
+        if (item.value === 'none') {
             setSelectedItem(['none']);
+            onSelectionChange(['none']); // Call the callback
             return;
         }
 
         setSelectedItem(prev => {
-            // Remove 'none' if any other allergy is selected
+            // Remove 'none' if any other item is selected
             const filtered = prev.filter(a => a !== 'none');
 
-            // Toggle the allergy
-            return filtered.includes(allergy.value)
-                ? filtered.filter(a => a !== allergy.value)
-                : [...filtered, allergy.value];
+            // Toggle the item
+            const newSelection = filtered.includes(item.value)
+                ? filtered.filter(a => a !== item.value)
+                : [...filtered, item.value];
+            
+            onSelectionChange(newSelection); // Call the callback
+            return newSelection;
         });
     };
 
     const selectedLabels = selectedItem.map(value => {
         const item = listItems.find(a => a.value === value);
-        return item ? item.label : null;
+        const showLabel = retunValue ? item.value : item.label;
+        return item ? showLabel : null;
     }).filter(Boolean).join(', ') || inputFieldText;
     return (
         <div className="dropdown-container">
@@ -45,6 +50,9 @@ const DropdownField = ({ listItems, inputFieldText = "Select Item", label = "Ite
                         <thead>
                             <tr>
                                 <th>Select</th>
+                                {showValue &&
+                                    <th>What do you need?</th>
+                                }
                                 <th>{label}</th>
                             </tr>
                         </thead>
@@ -61,6 +69,10 @@ const DropdownField = ({ listItems, inputFieldText = "Select Item", label = "Ite
                                             onChange={() => handleSelectItem(item)}
                                         />
                                     </td>
+                                    {showValue &&
+                                        <td>{item.value}</td>
+                                    }
+
                                     <td>{item.label}</td>
                                 </tr>
                             ))}

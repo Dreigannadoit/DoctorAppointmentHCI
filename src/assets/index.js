@@ -15,6 +15,9 @@ import tooth5 from "./icons/tooth5.png"
 import tooth6 from "./icons/tooth6.png"
 import tooth7 from "./icons/tooth7.png"
 
+import Arrow_right from "./icons/Arrow_right.svg"
+import Arrow_left from "./icons/Arrow_left.svg"
+
 import bell from "./icons/bell.png"
 
 import about_1 from "./icons/about_1.png"
@@ -27,6 +30,8 @@ import doctor_2 from "./imgs/doctor_2.png"
 import doctor_3 from "./imgs/doctor_3.png"
 import doctor_4 from "./imgs/doctor_4.png"
 import doctor_5 from "./imgs/doctor_5.png"
+import doctor_6 from "./imgs/doctor_6.png"
+import doctor_7 from "./imgs/doctor_7.png"
 
 import profile from "./imgs/profile.jpg"
 
@@ -87,6 +92,8 @@ export {
     doctor_3,
     doctor_4,
     doctor_5,
+    doctor_6,
+    doctor_7,
     cta_hero,
     login,
     login_2,
@@ -96,5 +103,6 @@ export {
     hann,
     ken,
     logo_sidebar,
-    profile
+    profile,
+    Arrow_left, Arrow_right
 }
