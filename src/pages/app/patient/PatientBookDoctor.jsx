@@ -23,6 +23,8 @@ const PatientBookDoctor = () => {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [selectedSlotDetails, setSelectedSlotDetails] = useState(null);
     const [showAppointmentDetails, setShowAppointmentDetails] = useState(false);
+    const [finalDateSelected, setFinalDateSelected] = useState('');
+    const [finalTimeSelected, setFinalTimeSelected] = useState('');
 
     useEffect(() => {
         const available = generateAvailableSlots(initialUnavailableEvents, 2024, 6);
@@ -32,11 +34,15 @@ const PatientBookDoctor = () => {
     const openConfirmationPopup = (details) => {
         setSelectedSlotDetails(details);
         setIsPopupOpen(true);
+        setFinalDateSelected(selectedSlotDetails.dateSelected);
+        setFinalTimeSelected(selectedSlotDetails.timeSelected);
     };
 
     const handleClosePopup = () => {
         setIsPopupOpen(false);
         setSelectedSlotDetails(null);
+        setFinalDateSelected(selectedSlotDetails.dateSelected);
+        setFinalTimeSelected(selectedSlotDetails.timeSelected);
     };
 
     const handleConfirmBooking = () => {
@@ -69,12 +75,9 @@ const PatientBookDoctor = () => {
             }
             return [...filteredEvents, newBooking];
         });
-
-        console.log('Appointment Confirmed:', {
-            start: new Date(rawStart).toISOString(),
-            end: new Date(rawEnd).toISOString(),
-            allDay: rawAllDay,
-        });
+        
+        setFinalDateSelected(selectedSlotDetails.dateSelected);
+        setFinalTimeSelected(selectedSlotDetails.timeSelected);
 
         handleClosePopup();
         setShowAppointmentDetails(true);
@@ -185,10 +188,8 @@ const PatientBookDoctor = () => {
                                 handleCloseAppointmentDetails();
                                 returnToDashboard();
                             }}
-                            appointmentDetails={{
-                                date: selectedSlotDetails?.dateSelected,
-                                time: selectedSlotDetails?.timeSelected,
-                            }}
+                            dateSelected={finalDateSelected}
+                            timeSelected={finalTimeSelected}
                         />
                     )}
                 </AnimatePresence>

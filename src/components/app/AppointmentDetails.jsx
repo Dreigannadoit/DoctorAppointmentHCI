@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { logo } from '../../assets';
 import generateTrackingId from '../../utils/generateTrackingId';
 
-const AppointmentDetails = ({ exitMethod, appointmentDetails }) => {
+const AppointmentDetails = ({ exitMethod, dateSelected, timeSelected }) => {
     return (
         <AnimatePresence>
             <motion.div
@@ -53,8 +53,8 @@ const AppointmentDetails = ({ exitMethod, appointmentDetails }) => {
                             <p><strong>Appointment Location: </strong> <span>8WJP+7R9, A. S. Fortuna St, Mandaue City, 6014 Cebu</span> </p>
                             <p><strong>Doctor:</strong> <span>Dr. Shaboinky</span></p>
                             <p><strong>Reason for Visit:</strong> <span>Tooth Pain</span> </p>
-                            <p><strong>Appointment Date:</strong> <span>{appointmentDetails?.date || 'Not specified'}</span> </p>
-                            <p><strong>Time:</strong> <span>{appointmentDetails?.time || 'Not specified'}</span> </p>
+                            <p><strong>Appointment Date:</strong> <span>{dateSelected}</span> </p>
+                            <p><strong>Time:</strong> <span>{timeSelected}</span> </p>
                             <p><strong>Appointment Tracking ID:</strong> <span>{generateTrackingId()}</span> </p>
                         </motion.div>
                         <motion.div
@@ -69,6 +69,13 @@ const AppointmentDetails = ({ exitMethod, appointmentDetails }) => {
                                 whileTap={{ scale: 0.95 }}
                             >
                                 Back to Dashboard
+                            </motion.button>
+                            
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                            >
+                                Download Details
                             </motion.button>
                         </motion.div>
                     </div>

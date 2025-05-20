@@ -278,6 +278,10 @@
     border-radius: 35px;
 }
 
+.AppointmentDetails_pop_up_overlay .pop_up .button_container button:last-child {
+    background: var(--background-color);
+    color: var(--dark-green-color);
+}
 
 
 /* Chatbot Styles */
