@@ -30,6 +30,5 @@ ____
 ## 👥 Project Members
 - **Robert Bamba**
 - **Shifra Garcia**
-- **Farrah Manalegro**
 - **Hannah A. Hontiveros**
 - **Ken Mandrinan**
