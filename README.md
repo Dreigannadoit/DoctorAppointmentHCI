@@ -26,9 +26,3 @@ npm run dev
 
 The frontend should now be running on http://localhost:5173 
 ____
-
-## 👥 Project Members
-- **Robert Bamba**
-- **Shifra Garcia**
-- **Hannah A. Hontiveros**
-- **Ken Mandrinan**
