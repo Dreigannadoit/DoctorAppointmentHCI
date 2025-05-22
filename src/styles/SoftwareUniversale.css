@@ -68,6 +68,7 @@
     justify-content: center;
     gap: 25px;
 }
+
 .software_navbar ul li button {
     border: none;
     background: transparent;
@@ -104,75 +105,76 @@
 .software_navbar ul li:nth-child(4) img {
     transform: translateX(30%);
 }
+
 .software_navbar:hover ul li img {
     transform: translateX(0%);
 }
 
 /* Exit Confirmation Popup Styles */
 .exit-confirm-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9000;
 }
 
 .exit-confirm-popup {
-  background-color: white;
-  padding: 2rem;
-  border-radius: 10px;
-  width: 350px;
-  max-width: 90%;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  text-align: center;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 350px;
+    max-width: 90%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
 
 .exit-confirm-popup h3 {
-  margin-top: 0;
-  color: #333;
+    margin-top: 0;
+    color: #333;
 }
 
 .exit-confirm-popup p {
-  margin-bottom: 1.5rem;
-  color: #666;
+    margin-bottom: 1.5rem;
+    color: #666;
 }
 
 .exit-confirm-popup .button-group {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .exit-confirm-popup button {
-  padding: 0.5rem 1.5rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: 500;
-  transition: all 0.2s ease;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
 }
 
 .exit-confirm-popup .cancel-btn {
-  background-color: #f1f1f1;
-  color: #333;
+    background-color: #f1f1f1;
+    color: #333;
 }
 
 .exit-confirm-popup .cancel-btn:hover {
-  background-color: #e0e0e0;
+    background-color: #e0e0e0;
 }
 
 .exit-confirm-popup .confirm-btn {
-  background-color: #ff4d4d;
-  color: white;
+    background-color: #ff4d4d;
+    color: white;
 }
 
 .exit-confirm-popup .confirm-btn:hover {
-  background-color: #e60000;
+    background-color: #e60000;
 }
 
 
@@ -285,67 +287,54 @@
 
 
 /* Chatbot Styles */
-.chatbot-container {
+
+.chat-fab {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    z-index: 1000;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.chatbot-toggle {
-    background-color: #4CAF50;
-    color: white;
+    height: 50px;
+    width: 50px;
+    padding: 10px;
+    border-radius: 35px;
+    background-color: var(--dark-pink-color);
+    color: #fff;
     border: none;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
 }
 
-.chatbot-window {
+.chat-fab img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+
+.chat-container {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
     width: 350px;
-    max-width: 90vw;
-    height: 450px;
-    background: white;
+    border: 1px solid #ccc;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
-    overflow: hidden;
-    margin-bottom: 15px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+
+    transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.chatbot-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+.chat-container.open-animate {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
-.chatbot-header h3 {
-    margin: 0;
-    font-size: 1.2rem;
-}
-
-.chatbot-header button {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-.chatbot-messages {
-    flex: 1;
-    padding: 15px;
+.chat-messages {
+    padding: 10px;
+    height: 300px;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
@@ -353,53 +342,56 @@
 }
 
 .chat-bubble {
-    max-width: 80%;
-    padding: 10px 15px;
-    border-radius: 18px;
-    line-height: 1.4;
-    position: relative;
+    padding: 8px 12px;
+    border-radius: 15px;
+    max-width: 75%;
 }
 
 .chat-bubble.user {
     align-self: flex-end;
-    background-color: #4CAF50;
-    color: white;
-    border-bottom-right-radius: 5px;
+    background-color: #dcf8c6;
 }
 
 .chat-bubble.bot {
     align-self: flex-start;
-    background-color: #f1f1f1;
-    color: #333;
-    border-bottom-left-radius: 5px;
+    background-color: #f1f0f0;
 }
 
-.chatbot-input {
+.chat-input-row {
     display: flex;
+    border-top: 1px solid #ddd;
+}
+
+.chat-input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-bottom-left-radius: 10px;
+    outline: none;
+}
+
+.chat-send-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    border-bottom-right-radius: 10px;
+}
+
+.chat-quick-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
     padding: 10px;
     border-top: 1px solid #eee;
 }
 
-.chatbot-input input {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ddd;
+.chat-quick-button {
+    padding: 6px 10px;
+    background-color: #eee;
+    border: 1px solid #ccc;
     border-radius: 20px;
-    outline: none;
-}
-
-.chatbot-input button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    padding: 0 15px;
-    margin-left: 10px;
     cursor: pointer;
-}
-
-/* Make sure the wrapper doesn't interfere with the chatbot */
-.PatientWrapper {
-    position: relative;
-    z-index: 1;
+    font-size: 12px;
 }

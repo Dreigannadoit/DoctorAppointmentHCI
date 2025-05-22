@@ -19,6 +19,7 @@ import Arrow_right from "./icons/Arrow_right.svg"
 import Arrow_left from "./icons/Arrow_left.svg"
 
 import bell from "./icons/bell.png"
+import chat from "./icons/chat.png"
 
 import about_1 from "./icons/about_1.png"
 import about_2 from "./icons/about_2.png"
@@ -85,6 +86,7 @@ export {
     tooth6,
     tooth7,
     bell,
+    chat,
     about_1,
     about_2,
     about_3,
