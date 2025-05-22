@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { chat } from '../../assets';
+import { responsesMap } from '../../constants';
 
 const quickResponses = [
   "How to book an appointment?",
@@ -7,13 +8,6 @@ const quickResponses = [
   "Do you accept walk-ins?",
   "Can I cancel my appointment?",
 ];
-
-const responsesMap = {
-  "How to book an appointment?": "You can book an appointment by clicking 'Book Now' and selecting your preferred time.",
-  "What are your clinic hours?": "Our clinic is open Monday to Friday, 9AM to 5PM.",
-  "Do you accept walk-ins?": "Yes, we accept walk-ins depending on availability.",
-  "Can I cancel my appointment?": "Yes, you can cancel through your dashboard up to 24 hours before your appointment.",
-};
 
 const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -58,36 +52,37 @@ const ChatBot = () => {
         <img src={chat} alt="" />
       </button>
 
-        <div className={`chat-container ${isOpen ? "open-animate" : ""}` }>
-          <div className="chat-messages">
-            {messages.map((msg, idx) => (
-              <div key={idx} className={msg.isUser ? 'chat-bubble user' : 'chat-bubble bot'}>
-                {msg.text}
-              </div>
-            ))}
-            <div ref={messagesEndRef} />
-          </div>
-
-          <div className="chat-quick-buttons">
-            {quickResponses.map((text, idx) => (
-              <button key={idx} className="chat-quick-button" onClick={() => handleQuickResponse(text)}>
-                {text}
-              </button>
-            ))}
-          </div>
-
-          <div className="chat-input-row">
-            <input
-              type="text"
-              value={input}
-              onChange={e => setInput(e.target.value)}
-              onKeyDown={e => e.key === 'Enter' && handleUserMessage()}
-              placeholder="Type your message..."
-              className="chat-input"
-            />
-            <button onClick={handleUserMessage} className="chat-send-button">Send</button>
-          </div>
+      <div className={`chat-container ${isOpen ? "open-animate" : ""}`}>
+        <div className="chat-messages">
+          {messages.map((msg, idx) => (
+            <div key={idx} className={msg.isUser ? 'chat-bubble user' : 'chat-bubble bot'}>
+              {msg.text}
+            </div>
+          ))}
+          <div ref={messagesEndRef} />
         </div>
+
+        <div className="chat-quick-buttons">
+          <p>FAQ</p>
+          {quickResponses.map((text, idx) => (
+            <button key={idx} className="chat-quick-button" onClick={() => handleQuickResponse(text)}>
+              {text}
+            </button>
+          ))}
+        </div>
+
+        <div className="chat-input-row">
+          <input
+            type="text"
+            value={input}
+            onChange={e => setInput(e.target.value)}
+            onKeyDown={e => e.key === 'Enter' && handleUserMessage()}
+            placeholder="Type your message..."
+            className="chat-input"
+          />
+          <button onClick={handleUserMessage} className="chat-send-button">Send</button>
+        </div>
+      </div>
     </div>
   );
 };

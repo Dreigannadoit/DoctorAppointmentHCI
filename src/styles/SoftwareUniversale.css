@@ -301,6 +301,10 @@
     border: none;
     cursor: pointer;
     z-index: 1000;
+    transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+body:has(.chat-container.open-animate) .chat-fab {
+    right: calc(20px + 350px) ;
 }
 
 .chat-fab img {
@@ -312,21 +316,20 @@
 
 .chat-container {
     position: fixed;
-    bottom: 80px;
-    right: 20px;
+    bottom: 0px;
+    right: 0px;
+    height: 100vh;
     width: 350px;
     border: 1px solid #ccc;
-    border-radius: 10px;
     display: flex;
     flex-direction: column;
     background-color: #fff;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    z-index: 999;
-    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+    z-index: 999;clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
 
+    
     transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 
 .chat-container.open-animate {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
@@ -334,7 +337,7 @@
 
 .chat-messages {
     padding: 10px;
-    height: 300px;
+    height: 100%;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
@@ -349,7 +352,7 @@
 
 .chat-bubble.user {
     align-self: flex-end;
-    background-color: #dcf8c6;
+    background-color: var(--light-green-color);
 }
 
 .chat-bubble.bot {
@@ -366,7 +369,6 @@
     flex: 1;
     padding: 10px;
     border: none;
-    border-bottom-left-radius: 10px;
     outline: none;
 }
 
@@ -376,7 +378,6 @@
     background-color: #007bff;
     color: #fff;
     cursor: pointer;
-    border-bottom-right-radius: 10px;
 }
 
 .chat-quick-buttons {
@@ -385,6 +386,11 @@
     gap: 6px;
     padding: 10px;
     border-top: 1px solid #eee;
+}
+
+
+.chat-quick-buttons p{
+    width: 100%;
 }
 
 .chat-quick-button {
