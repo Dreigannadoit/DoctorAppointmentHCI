@@ -52,7 +52,7 @@
     align-items: flex-start;
     justify-content: space-between;
     flex-direction: column;
-    z-index: 9999;
+    z-index: 999;
     padding: 25px;
 }
 
