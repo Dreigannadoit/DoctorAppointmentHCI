@@ -333,6 +333,8 @@ export const initialUnavailableEvents = [
   "What can I do via the patient portal?": "Our patient portal allows you to view lab results, request prescription refills, schedule or change appointments, pay bills, update personal information, and send secure messages to your provider and our staff.",
   "Is the patient portal secure?": "Yes, our patient portal is HIPAA-compliant and uses robust encryption and security measures to protect your private health information.",
   "Can I access family members' records via my portal?": "With appropriate signed consent (for adults) or as a legal guardian (for minors 12-17, with some limitations), you can be granted 'proxy access' to view certain health information for family members.",
+  "Who made this?": "Robert Andrei N. Bamba",
+  "devs": "Robert Andrei N. Bamba",
   "How long to get copies of records?": "Requests for medical records are typically processed within 7-10 business days. Complex requests or older records might take longer, up to the 30 days allowed by law.",
   "What format are records provided in?": "We can provide medical records in electronic format (e.g., secure PDF via portal or encrypted email, or on a CD) or as paper copies, based on your preference and the nature of the request.",
   "How do I authorize release of records to another doctor?": "You'll need to complete and sign a HIPAA-compliant 'Authorization for Release of Medical Information' form. This form is available on our website or from our front desk.",

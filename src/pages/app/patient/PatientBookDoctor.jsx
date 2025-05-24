@@ -175,8 +175,8 @@ const PatientBookDoctor = () => {
 
                 <PopUp
                     isOpen={isPopupOpen}
-                    dateSelected={selectedSlotDetails?.dateSelected}
-                    timeSelected={selectedSlotDetails?.timeSelected}
+                    dateSelected={finalDateSelected}
+                    timeSelected={finalTimeSelected}
                     onCancel={handleClosePopup}
                     onConfirm={handleConfirmBooking}
                 />

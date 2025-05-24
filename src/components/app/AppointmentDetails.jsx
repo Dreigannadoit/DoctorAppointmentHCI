@@ -4,6 +4,15 @@ import { logo } from '../../assets';
 import generateTrackingId from '../../utils/generateTrackingId';
 
 const AppointmentDetails = ({ exitMethod, dateSelected, timeSelected }) => {
+    const date = new Date();
+    const showTime = 
+        date.getDay() 
+        + '/' + date.getMonth() 
+        + '/' + date.getFullYear() 
+        + ', ' + date.getHours() 
+        + ':' + date.getMinutes() 
+        + ":" + date.getSeconds();
+
     return (
         <AnimatePresence>
             <motion.div
@@ -51,6 +60,7 @@ const AppointmentDetails = ({ exitMethod, dateSelected, timeSelected }) => {
                         >
                             <p><strong>Patient Name: </strong> <span>John Doe</span> </p>
                             <p><strong>Appointment Location: </strong> <span>8WJP+7R9, A. S. Fortuna St, Mandaue City, 6014 Cebu</span> </p>
+                            <p><strong>Date Booked </strong> <span>{showTime}</span> </p>
                             <p><strong>Doctor:</strong> <span>Dr. Shaboinky</span></p>
                             <p><strong>Reason for Visit:</strong> <span>Tooth Pain</span> </p>
                             <p><strong>Appointment Date:</strong> <span>{dateSelected}</span> </p>
@@ -64,18 +74,20 @@ const AppointmentDetails = ({ exitMethod, dateSelected, timeSelected }) => {
                             transition={{ delay: 0.5 }}
                         >
                             <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                            >
+                                <a target='_blank' href="/DoctorAppointmentHCI/public/Details.png">
+                                    Download Details
+                                </a>
+                            </motion.button>
+
+                            <motion.button
                                 onClick={exitMethod}
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                             >
                                 Back to Dashboard
-                            </motion.button>
-                            
-                            <motion.button
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                            >
-                                Download Details
                             </motion.button>
                         </motion.div>
                     </div>

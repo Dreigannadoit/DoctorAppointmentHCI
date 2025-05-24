@@ -6,8 +6,8 @@ const Footer = ({addClassCondition = ""}) => {
   return (
     <div className={`footer ${addClassCondition}`}>
       <Link to="/"><img src={logo_light} alt="" /></Link>
-      <p>Smart Appointment Scheduler for Community (Dental) Clinics</p>
-      <p>A PROJECT WE MADE || ALL RIGHTS RESERVED 2025</p>
+      <p>Demo Dentist Booking App Frontend</p>
+      <p>A DreiAbmab Project || ALL RIGHTS RESERVED 2025</p>
     </div>
   )
 }

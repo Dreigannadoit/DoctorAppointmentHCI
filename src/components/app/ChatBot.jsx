@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { chat } from '../../assets';
 import { responsesMap } from '../../constants';
+import useNearBottom from '../../hooks/useNearBottom';
 
 const quickResponses = [
   "How to book an appointment?",
@@ -12,10 +13,17 @@ const quickResponses = [
 const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
-    { text: "Hi! How can I help you today?", isUser: false }
+    { text: "Hi Robert Bamba! How can I help you today?", isUser: false }
   ]);
   const [input, setInput] = useState("");
   const messagesEndRef = useRef(null);
+  const isNearBottom = useNearBottom(50);
+
+
+  useEffect(() => {
+    console.log('Near bottom:', isNearBottom);
+  }, [isNearBottom]);
+
 
   const toggleChat = () => setIsOpen(prev => !prev);
 
@@ -48,7 +56,7 @@ const ChatBot = () => {
 
   return (
     <div>
-      <button onClick={toggleChat} className="chat-fab">
+      <button onClick={toggleChat} className={`chat-fab ${isNearBottom ? "nearbottom" : ""}`}>
         <img src={chat} alt="" />
       </button>
 

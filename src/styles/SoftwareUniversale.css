@@ -232,6 +232,7 @@
 
 .AppointmentDetails_pop_up_overlay .pop_up {
     width: 50%;
+    min-width: 350px;
     height: 100%;
     padding: 35px;
     border-bottom-left-radius: 35px;
@@ -267,7 +268,7 @@
 
 .AppointmentDetails_pop_up_overlay .pop_up .button_container {
     width: 100%;
-    flex-direction: column;
+    flex-direction: row-reverse;
     justify-content: flex-start;
     align-items: flex-end;
 }
@@ -280,124 +281,10 @@
     border-radius: 35px;
 }
 
-.AppointmentDetails_pop_up_overlay .pop_up .button_container button:last-child {
+.AppointmentDetails_pop_up_overlay .pop_up .button_container button:first-child,
+.AppointmentDetails_pop_up_overlay .pop_up .button_container button:first-child a{
     background: var(--background-color);
-    color: var(--dark-green-color);
+    color: var(--dark-color);
 }
 
 
-/* Chatbot Styles */
-
-.chat-fab {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    height: 50px;
-    width: 50px;
-    padding: 10px;
-    border-radius: 35px;
-    background-color: var(--dark-pink-color);
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    z-index: 1000;
-    transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-body:has(.chat-container.open-animate) .chat-fab {
-    right: calc(20px + 350px) ;
-}
-
-.chat-fab img {
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
-}
-
-
-.chat-container {
-    position: fixed;
-    bottom: 0px;
-    right: 0px;
-    height: 100vh;
-    width: 350px;
-    border: 1px solid #ccc;
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    z-index: 999;clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-
-    
-    transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.chat-container.open-animate {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-}
-
-.chat-messages {
-    padding: 10px;
-    height: 100%;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.chat-bubble {
-    padding: 8px 12px;
-    border-radius: 15px;
-    max-width: 75%;
-}
-
-.chat-bubble.user {
-    align-self: flex-end;
-    background-color: var(--light-green-color);
-}
-
-.chat-bubble.bot {
-    align-self: flex-start;
-    background-color: #f1f0f0;
-}
-
-.chat-input-row {
-    display: flex;
-    border-top: 1px solid #ddd;
-}
-
-.chat-input {
-    flex: 1;
-    padding: 10px;
-    border: none;
-    outline: none;
-}
-
-.chat-send-button {
-    padding: 10px 20px;
-    border: none;
-    background-color: #007bff;
-    color: #fff;
-    cursor: pointer;
-}
-
-.chat-quick-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    padding: 10px;
-    border-top: 1px solid #eee;
-}
-
-
-.chat-quick-buttons p{
-    width: 100%;
-}
-
-.chat-quick-button {
-    padding: 6px 10px;
-    background-color: #eee;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 12px;
-}
