@@ -20,7 +20,7 @@ const NavbarWeb = () => {
           <li><Link smooth to="/#doctor">DOCTORS</Link></li>
           <li><Link smooth to="/">PRICING</Link></li>
           <li><Link smooth to="/#about">ABOUT US</Link></li>
-          {/* <li><Link smooth to="/contact">CONTACT</Link></li> */}
+          <li><Link smooth to="/contact">CONTACT</Link></li>
         </ul>
       </nav>
 
