@@ -43,21 +43,21 @@ const creatorList = [
         title: "DEVELOPER",
         img: drei
     },
-    {
-        name: "SHIFRA ABIGAIL B. GARCIA",
-        title: "DESIGNER",
-        img: abby
-    },
-    {
-        name: "HANNAH A. HONTIVEROS",
-        title: "DEVELOPER",
-        img: hann
-    },
-    {
-        name: "KEN A. MADRIÑAN",
-        title: "DESIGNER",
-        img: ken
-    },
+    // {
+    //     name: "SHIFRA ABIGAIL B. GARCIA",
+    //     title: "DESIGNER",
+    //     img: abby
+    // },
+    // {
+    //     name: "HANNAH A. HONTIVEROS",
+    //     title: "DEVELOPER",
+    //     img: hann
+    // },
+    // {
+    //     name: "KEN A. MADRIÑAN",
+    //     title: "DESIGNER",
+    //     img: ken
+    // },
 ]
 
 
